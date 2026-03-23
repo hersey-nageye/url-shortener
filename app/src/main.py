@@ -7,11 +7,6 @@ from .events import publish_click_event
 app = FastAPI()
 
 
-@app.get("/hello")
-def hello():
-    return {"message": "Hello, World!"}
-
-
 @app.get("/healthz")
 def health():
     return {"status": "ok", "ts": int(time.time()), "db": get_backend_type()}
